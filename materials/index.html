@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subject Material | Vivek Sharma Learning Hub</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .container { max-width: 800px; margin: 100px auto; padding: 40px; background: var(--card-bg); border-radius: 20px; border: 1px solid var(--glass-border); }
+        .back-btn { display: inline-flex; align-items: center; gap: 10px; color: var(--highlight); text-decoration: none; margin-bottom: 30px; }
+        h1 { font-size: 2.5rem; margin-bottom: 20px; }
+        .content { color: var(--text-secondary); line-height: 1.8; }
+        .content section { margin-bottom: 30px; }
+        .content h3 { color: var(--text-primary); margin-bottom: 10px; }
+    </style>
+</head>
+<body class="dark-theme">
+    <div class="container reveal active">
+        <a href="../index.html" class="back-btn">← Back to Portfolio</a>
+        <h1 id="subject-title">Developing Knowledge...</h1>
+        <div class="content" id="subject-content">
+            <section>
+                <h3>Overview</h3>
+                <p>Detailed study material for the B.Tech CSE curriculum at LPU. Content is structured around the 3rd-year 5th/6th semester syllabus.</p>
+            </section>
+            <section>
+                <h3>Status: In Progress</h3>
+                <p>This knowledge resource is being curated from various university references and industry textbooks. Please check back for a more detailed PDF export.</p>
+            </section>
+        </div>
+    </div>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const subject = urlParams.get('s') || 'Knowledge Resource';
+        document.title = subject + " | Vivek Sharma";
+        document.getElementById('subject-title').innerText = subject;
+    </script>
+</body>
+</html>
