@@ -1,60 +1,90 @@
-// Initialize Lucide Icons
-lucide.createIcons();
+// Theme Toggle Logic
+const themeToggle = document.getElementById('theme-toggle');
+const body = document.body;
 
-// Scroll Effects
-const navbar = document.getElementById('navbar');
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
-        navbar.classList.add('scrolled');
+// Check for saved theme preference
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme) {
+    body.classList.add(savedTheme);
+}
+
+themeToggle.addEventListener('click', () => {
+    if (body.classList.contains('light-theme')) {
+        body.classList.remove('light-theme');
+        localStorage.setItem('theme', '');
     } else {
-        navbar.classList.remove('scrolled');
+        body.classList.add('light-theme');
+        localStorage.setItem('theme', 'light-theme');
     }
 });
 
-// Reveal Animations on Scroll
-const revealElements = document.querySelectorAll('.reveal');
-const revealOnScroll = new IntersectionObserver((entries, observer) => {
+// Reveal on Scroll logic
+const reveals = document.querySelectorAll('.reveal');
+
+const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             entry.target.classList.add('active');
-            // Once revealed, no need to observe again
-            // observer.unobserve(entry.target); 
         }
     });
 }, {
     threshold: 0.1
 });
 
-revealElements.forEach(el => {
-    revealOnScroll.observe(el);
+reveals.forEach(reveal => {
+    observer.observe(reveal);
 });
 
-// Smooth Scroll for Nav Links
+// Cursor Glow Effect logic
+const cursorGlow = document.querySelector('.cursor-glow');
+
+document.addEventListener('mousemove', (e) => {
+    cursorGlow.style.left = `${e.clientX}px`;
+    cursorGlow.style.top = `${e.clientY}px`;
+});
+
+// Smooth Scrolling for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        
+        if (targetElement) {
             window.scrollTo({
-                top: target.offsetTop - 80,
+                top: targetElement.offsetTop - 80, // Offset for fixed nav
                 behavior: 'smooth'
             });
         }
     });
 });
 
-// Counter / Progress Bar Animation Logic
-const progressBars = document.querySelectorAll('.progress-fill');
-const animateProgress = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            const width = entry.target.style.width;
-            entry.target.style.width = '0%';
-            setTimeout(() => {
-                entry.target.style.width = width;
-            }, 100);
-        }
-    });
-}, { threshold: 0.5 });
+// Certification Carousel Auto-Scroll (Simple version)
+const certCarousel = document.querySelector('.cert-carousel');
+let scrollAmount = 0;
+const scrollSpeed = 0.5;
 
-progressBars.forEach(bar => animateProgress.observe(bar));
+function autoScroll() {
+    scrollAmount += scrollSpeed;
+    if (scrollAmount >= certCarousel.scrollWidth - certCarousel.clientWidth) {
+        scrollAmount = 0;
+    }
+    certCarousel.scrollLeft = scrollAmount;
+    requestAnimationFrame(autoScroll);
+}
+
+// Optional: Enable auto-scroll for certification logos
+// autoScroll();
+
+// Parallax effect on hero headshot
+const headshot = document.querySelector('.headshot-wrapper');
+document.addEventListener('mousemove', (e) => {
+    const { clientX, clientY } = e;
+    const { innerWidth, innerHeight } = window;
+    const xPos = (clientX / innerWidth - 0.5) * 20;
+    const yPos = (clientY / innerHeight - 0.5) * 20;
+    
+    if (headshot) {
+        headshot.style.transform = `rotateY(${xPos}deg) rotateX(${-yPos}deg)`;
+    }
+});

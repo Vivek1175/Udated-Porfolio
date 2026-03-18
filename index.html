@@ -3,192 +3,261 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vivek Sharma | Data Analyst Portfolio</title>
-    <meta name="description" content="Professional portfolio of Vivek Sharma, a Data Analyst and Data Science student specializing in Python, SQL, and Machine Learning.">
-    <link rel="stylesheet" href="style.css">
-    <!-- Google Fonts -->
+    <title>Vivek Sharma | Data Scientist & Analyst Portfolio</title>
+    <meta name="description" content="Portfolio of Vivek Sharma, a Data Analyst and B.Tech CSE (Data Science) student decoding data to drive decisions.">
+    <!-- Google Fonts: Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
-
-    <nav id="navbar">
-        <div class="container">
-            <a href="#" class="logo">VIVEK.</a>
-            <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#education">Education</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
+<body class="dark-theme">
+    <div class="cursor-glow"></div>
+    
+    <nav class="glass-nav">
+        <div class="nav-content">
+            <div class="logo">Vivek Sharma</div>
+            <div class="nav-right">
+                <ul class="nav-links">
+                    <li><a href="#hero">Home</a></li>
+                    <li><a href="#stack">Tech Stack</a></li>
+                    <li><a href="#roadmap">Growth</a></li>
+                    <li><a href="#projects">Work</a></li>
+                    <li><a href="#proof">Proof</a></li>
+                </ul>
+                <button id="theme-toggle" class="theme-btn" aria-label="Toggle Theme">
+                    <i data-lucide="sun" class="sun-icon"></i>
+                    <i data-lucide="moon" class="moon-icon"></i>
+                </button>
+            </div>
         </div>
     </nav>
 
-    <section class="hero container">
-        <div class="hero-content">
-            <div class="hero-text">
-                <p class="reveal">Hello, I'm Vivek Sharma</p>
-                <h1 class="reveal">Solving Complex Problems with <span class="highlight">Data.</span></h1>
-                <p class="tagline reveal">B.Tech CSE student & aspiring Data Analyst passionate about turning raw data into actionable insights.</p>
-                <div class="hero-cta reveal">
-                    <a href="#projects" class="btn btn-primary">View Projects</a>
-                    <a href="#contact" class="btn btn-secondary">Get In Touch</a>
-                </div>
-            </div>
-            <div class="hero-image reveal">
-                <img src="../../brain/fb16ebe4-7822-4b90-9a23-7690664e3689/professional_headshot_placeholder_1773832698230.png" alt="Vivek Sharma Professional Headshot">
-            </div>
-        </div>
-    </section>
-
-    <section id="skills" class="tech-section container">
-        <h2 class="section-title reveal">The Tech Stack</h2>
-        <div class="bento-grid">
-            <div class="bento-item glass large reveal">
-                <div>
-                   <i data-lucide="layers"></i>
-                   <h3>Data Science Core</h3>
-                   <p>Deep expertise in analyzing large datasets and building predictive models.</p>
-                </div>
-                <div class="project-tags">
-                   <span class="tag">Python</span>
-                   <span class="tag">SQL</span>
-                   <span class="tag">Machine Learning</span>
-                   <span class="tag">R</span>
-                </div>
-            </div>
-            <div class="bento-item glass reveal">
-                <i data-lucide="bar-chart-2"></i>
-                <h3>Visualization</h3>
-                <p>Tableau & PowerBI Expert</p>
-            </div>
-            <div class="bento-item glass reveal">
-                <i data-lucide="database"></i>
-                <h3>Engineering</h3>
-                <p>ETL & SQL Optimization</p>
-            </div>
-            <div class="bento-item glass reveal">
-                <i data-lucide="code-2"></i>
-                <h3>Development</h3>
-                <p>Automation & Scripting</p>
-            </div>
-            <div class="bento-item glass reveal">
-                <i data-lucide="cloud"></i>
-                <h3>Deployment</h3>
-                <p>Cloud Platforms (AWS/GCP)</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="projects" class="projects container">
-        <h2 class="section-title reveal">Featured Projects</h2>
-        <div class="project-list">
-            <!-- Project 1 -->
-            <div class="project-card glass reveal">
-                <div class="project-image">
-                    <img src="../../brain/fb16ebe4-7822-4b90-9a23-7690664e3689/project_mobile_sales_analytics_1773832715034.png" alt="Mobile Sales Analytics">
-                </div>
-                <div class="project-info">
-                    <h3>Mobile Sales Analytics</h3>
-                    <p>A comprehensive analysis of global mobile sales trends, identifying key market drivers and predicting future seasonal peaks.</p>
-                    <div class="project-tags">
-                        <span class="tag">Tableau</span>
-                        <span class="tag">SQL</span>
-                        <span class="tag">Advanced Excel</span>
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="hero-section">
+            <div class="hero-container">
+                <div class="hero-left reveal">
+                    <div class="headshot-wrapper glassmorphism">
+                        <img src="./assets/headshot.jpg" alt="Vivek Sharma Headshot" id="headshot">
                     </div>
-                    <a href="#" class="btn btn-secondary">Read Case Study</a>
                 </div>
-            </div>
-
-            <!-- Project 2 -->
-            <div class="project-card glass reverse reveal">
-                <div class="project-image">
-                    <img src="../../brain/fb16ebe4-7822-4b90-9a23-7690664e3689/project_bank_loan_default_prediction_1773832731877.png" alt="Bank Loan Default Prediction">
-                </div>
-                <div class="project-info">
-                    <h3>Loan Default Prediction</h3>
-                    <p>Built a classification model to predict the likelihood of loan defaults, helping financial institutions reduce credit risk by 15%.</p>
-                    <div class="project-tags">
-                        <span class="tag">Python</span>
-                        <span class="tag">Scikit-Learn</span>
-                        <span class="tag">Pandas</span>
+                <div class="hero-right reveal">
+                    <h1 class="hero-heading">I decode data to<br><span class="highlight">drive decisions.</span></h1>
+                    <p class="hero-subtext">3rd Year B.Tech CSE (Data Science) Student @ LPU | AWS Certified Data Engineer | Power BI Specialist</p>
+                    <div class="hero-actions">
+                        <a href="#" class="btn btn-primary glow-btn">Download CV <i data-lucide="download"></i></a>
+                        <a href="#projects" class="btn btn-secondary">View My Work</a>
                     </div>
-                    <a href="#" class="btn btn-secondary">Read Case Study</a>
                 </div>
             </div>
+        </section>
 
-            <!-- Project 3 -->
-            <div class="project-card glass reveal">
-                <div class="project-image">
-                    <img src="../../brain/fb16ebe4-7822-4b90-9a23-7690664e3689/project_ev_market_trends_1773832750538.png" alt="EV Registration & Market Trends">
-                </div>
-                <div class="project-info">
-                    <h3>EV Market Trends</h3>
-                    <p>Visualizing the global shift towards electric mobility, analyzing registration data across different continents and manufacturers.</p>
-                    <div class="project-tags">
-                        <span class="tag">PowerBI</span>
-                        <span class="tag">Python</span>
-                        <span class="tag">API Integration</span>
+        <!-- Tech Stack section (Bento Box) -->
+        <section id="stack" class="section">
+            <h2 class="section-title reveal">The Engine Room</h2>
+            <div class="bento-grid">
+                <!-- Languages -->
+                <div class="bento-item reveal" style="grid-area: lang;">
+                    <h3>Languages</h3>
+                    <div class="tech-icons">
+                        <div class="tech-icon-item"><i data-lucide="terminal"></i><span>Python</span></div>
+                        <div class="tech-icon-item"><i data-lucide="coffee"></i><span>Java</span></div>
                     </div>
-                    <a href="#" class="btn btn-secondary">Read Case Study</a>
+                </div>
+                <!-- Data Analytics -->
+                <div class="bento-item reveal highlight-border" style="grid-area: data;">
+                    <h3>Data Analytics</h3>
+                    <div class="tech-icons">
+                        <div class="tech-icon-item"><i data-lucide="layout-dashboard"></i><span>Power BI</span></div>
+                        <div class="tech-icon-item"><i data-lucide="grid"></i><span>Excel</span></div>
+                        <div class="tech-icon-item"><i data-lucide="database"></i><span>MySQL</span></div>
+                    </div>
+                </div>
+                <!-- Cloud/DevOps -->
+                <div class="bento-item reveal" style="grid-area: cloud;">
+                    <h3>Cloud & DevOps</h3>
+                    <div class="tech-icons">
+                        <div class="tech-icon-item"><i data-lucide="cloud-lightning"></i><span>AWS</span></div>
+                        <div class="tech-icon-item"><i data-lucide="cpu"></i><span>Linux</span></div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="education" class="roadmap container">
-        <h2 class="section-title reveal">Education & Aspirations</h2>
-        <div class="roadmap-grid">
-            <div class="roadmap-card glass reveal">
-                <h3>Academic Journey</h3>
-                <div class="timeline-item">
-                    <div class="timeline-date">2022 - Present</div>
-                    <p><strong>B.Tech in Computer Science (Data Science)</strong></p>
-                    <p>Focusing on statistical modeling, Big Data, and Algorithms.</p>
+        <!-- Roadmap & Future Plans (Deep Dive) -->
+        <section id="roadmap" class="section">
+            <h2 class="section-title reveal">Growth Roadmap</h2>
+            <div class="roadmap-grid">
+                <div class="roadmap-col reveal">
+                    <h3>Academic Pillars</h3>
+                    <ul class="pillars-list">
+                        <li><i data-lucide="shield-check"></i> DSA (C++)</li>
+                        <li><i data-lucide="database-zap"></i> DBMS (SQL)</li>
+                        <li><i data-lucide="settings"></i> Operating Systems</li>
+                        <li><i data-lucide="brain-circuit"></i> Machine Learning</li>
+                    </ul>
                 </div>
-                <div class="timeline-item">
-                    <div class="timeline-date">2020 - 2022</div>
-                    <p><strong>Senior Secondary Education</strong></p>
-                    <p>Majored in Mathematics and Science.</p>
+                <div class="roadmap-col reveal">
+                    <h3>Future Learning Path</h3>
+                    <div class="future-item">
+                        <div class="label">Big Data Analytics (Spark/Hadoop) <span>70%</span></div>
+                        <div class="progress-bar"><div class="fill" style="width: 70%"></div></div>
+                    </div>
+                    <div class="future-item">
+                        <div class="label">Natural Language Processing <span>70%</span></div>
+                        <div class="progress-bar"><div class="fill" style="width: 70%"></div></div>
+                    </div>
                 </div>
             </div>
-            <div class="roadmap-card glass reveal">
-                <h3>Learning Goals 2024</h3>
-                <div class="progress-bar-container">
-                    <div class="progress-label"><span>Deep Learning</span><span>70%</span></div>
-                    <div class="progress-bar"><div class="progress-fill" style="width: 70%;"></div></div>
+        </section>
+
+        <!-- Knowledge Hub (Study Materials) -->
+        <section id="knowledge" class="section">
+            <h2 class="section-title reveal">Learning Hub</h2>
+            <p class="section-desc reveal">Deep-dive into the technical foundations I'm building.</p>
+            <div class="knowledge-grid">
+                <!-- Subject 1 -->
+                <div class="knowledge-card reveal">
+                    <div class="subject-icon"><i data-lucide="binary"></i></div>
+                    <h4>Data Structures & Algorithms</h4>
+                    <p>Arrays, Trees, Graphs, and Dynamic Programming in C++.</p>
+                    <a href="#" class="study-link">Open Material <i data-lucide="file-text"></i></a>
                 </div>
-                <div class="progress-bar-container">
-                    <div class="progress-label"><span>Big Data Tools (Spark)</span><span>45%</span></div>
-                    <div class="progress-bar"><div class="progress-fill" style="width: 45%;"></div></div>
+                <!-- Subject 2 -->
+                <div class="knowledge-card reveal">
+                    <div class="subject-icon"><i data-lucide="database"></i></div>
+                    <h4>Database Management Systems</h4>
+                    <p>Relational Databases, Normalization, and Query Optimization.</p>
+                    <a href="#" class="study-link">Open Material <i data-lucide="file-text"></i></a>
                 </div>
-                <div class="progress-bar-container">
-                    <div class="progress-label"><span>Cloud Computing</span><span>60%</span></div>
-                    <div class="progress-bar"><div class="progress-fill" style="width: 60%;"></div></div>
+                <!-- Subject 3 -->
+                <div class="knowledge-card reveal">
+                    <div class="subject-icon"><i data-lucide="cpu"></i></div>
+                    <h4>Operating Systems</h4>
+                    <p>Process Scheduling, Memory Management, and Multi-threading.</p>
+                    <a href="#" class="study-link">Open Material <i data-lucide="file-text"></i></a>
+                </div>
+                <!-- Subject 4 -->
+                <div class="knowledge-card reveal">
+                    <div class="subject-icon"><i data-lucide="brain"></i></div>
+                    <h4>Machine Learning</h4>
+                    <p>Supervised and Unsupervised learning with Scikit-learn.</p>
+                    <a href="#" class="study-link">Open Material <i data-lucide="file-text"></i></a>
+                </div>
+                <!-- Subject 5 -->
+                <div class="knowledge-card reveal">
+                    <div class="subject-icon"><i data-lucide="terminal"></i></div>
+                    <h4>Python for Data Science</h4>
+                    <p>Pandas, NumPy, and Matplotlib for end-to-end data pipelines.</p>
+                    <a href="#" class="study-link">Open Material <i data-lucide="file-text"></i></a>
+                </div>
+                <!-- Subject 6 -->
+                <div class="knowledge-card reveal">
+                    <div class="subject-icon"><i data-lucide="coffee"></i></div>
+                    <h4>Java Programming</h4>
+                    <p>OOP Principles, Collection Framework, and Multi-threading.</p>
+                    <a href="#" class="study-link">Open Material <i data-lucide="file-text"></i></a>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="contact" class="container reveal" style="padding: var(--space-xxl) 0; text-align: center;">
-        <h2 class="section-title">Ready to build something great?</h2>
-        <p style="color: var(--text-secondary); margin-bottom: var(--space-xl);">I'm currently looking for internship opportunities and collaborations in Data Science.</p>
-        <a href="mailto:sharmavivek.work@gmail.com" class="btn btn-primary">Send an Email</a>
-    </section>
+        <!-- Projects -->
+        <section id="projects" class="section">
+            <h2 class="section-title reveal">Featured Case Studies</h2>
+            <div class="projects-grid">
+                <!-- Project 1: Mobile Sales Analytics -->
+                <div class="project-card reveal">
+                    <div class="project-content">
+                        <div class="big-numbers gold">₹769M <span class="label">Revenue Tracking</span></div>
+                        <h3>Mobile Sales Performance Dashboard</h3>
+                        <p>Comprehensive analysis of 19K+ transactions to identify revenue drivers and market gaps. Performed ETL using Power Query and modeled data for dynamic insights.</p>
+                        <div class="tech-tags">
+                            <span>#PowerBI</span><span>#Python</span><span>#PowerQuery</span><span>#DAX</span>
+                        </div>
+                        <div class="future-scope">
+                            <strong>Future:</strong> Adding AI-powered seasonal sales predictions.
+                        </div>
+                    </div>
+                    <div class="project-actions">
+                        <a href="./reports/mobile_sales.pdf" target="_blank" class="btn btn-secondary btn-sm">View Full Report <i data-lucide="arrow-up-right"></i></a>
+                    </div>
+                </div>
 
-    <footer class="container">
-        <div class="footer-socials">
-            <a href="#"><i data-lucide="linkedin"></i></a>
-            <a href="#"><i data-lucide="github"></i></a>
-            <a href="#"><i data-lucide="twitter"></i></a>
-        </div>
-        <p class="footer-copy">&copy; 2024 Vivek Sharma. Built with <i data-lucide="heart" style="width: 14px; color: var(--accent-blue);"></i> and Data.</p>
+                <!-- Project 2: Bank Loan Default Prediction -->
+                <div class="project-card reveal">
+                    <div class="project-content">
+                        <div class="big-numbers">ML <span class="label">Risk Mitigation</span></div>
+                        <h3>Bank Loan Default Prediction</h3>
+                        <p>Predictive model using Scikit-learn to mitigate financial risk. Analyzed borrower segments and performed lifecycle value analysis with automated risk assessment.</p>
+                        <div class="tech-tags">
+                            <span>#Python</span><span>#ScikitLearn</span><span>#Pandas</span><span>#Seaborn</span>
+                        </div>
+                        <div class="future-scope">
+                            <strong>Future:</strong> Real-time API integration for auto-approvals.
+                        </div>
+                    </div>
+                    <div class="project-actions">
+                        <a href="./reports/loan_prediction.pdf" target="_blank" class="btn btn-secondary btn-sm">View Full Report <i data-lucide="arrow-up-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Project 3: EV Registration & Market Trends -->
+                <div class="project-card reveal">
+                    <div class="project-content">
+                        <div class="big-numbers">EV <span class="label">Market Trajectory</span></div>
+                        <h3>EV Registration & Market Trends</h3>
+                        <p>Tracking the global shift toward sustainable transport. Used Advanced Excel & Pivot Tables to reveal BEV vs. PHEV growth from 2012 to 2023.</p>
+                        <div class="tech-tags">
+                            <span>#Excel</span><span>#PivotTables</span><span>#DataVis</span>
+                        </div>
+                        <div class="future-scope">
+                            <strong>Future:</strong> Transitioning data pipe to AWS cloud storage.
+                        </div>
+                    </div>
+                    <div class="project-actions">
+                        <a href="./reports/ev_trends.pdf" target="_blank" class="btn btn-secondary btn-sm">View Full Report <i data-lucide="arrow-up-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Proof & Achievements -->
+        <section id="proof" class="section">
+            <h2 class="section-title reveal">Achievements & Proof</h2>
+            <div class="badges-row reveal">
+                <div class="badge-item">
+                    <div class="badge-icon gold"><i data-lucide="trophy"></i></div>
+                    <div class="badge-label">Mathematics Rank 1</div>
+                </div>
+                <div class="badge-item">
+                    <div class="badge-icon"><i data-lucide="award"></i></div>
+                    <div class="badge-label">Byte Bash Hackathon</div>
+                </div>
+            </div>
+            
+            <div class="cert-carousel-container reveal">
+                <h3>Certifications</h3>
+                <div class="cert-carousel">
+                    <!-- Carousel items (Clickable) -->
+                    <a href="#" class="cert-item" title="Click to view certificate">AWS Certified Data Engineer <i data-lucide="external-link"></i></a>
+                    <a href="#" class="cert-item" title="Click to view certificate">Google Data Analytics <i data-lucide="external-link"></i></a>
+                    <a href="#" class="cert-item" title="Click to view certificate">NPTEL Cloud Computing <i data-lucide="external-link"></i></a>
+                    <a href="#" class="cert-item" title="Click to view certificate">Coursera ML Specialization <i data-lucide="external-link"></i></a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>© 2026 Vivek Sharma | Decoded with <i data-lucide="heart" class="heart-icon"></i> and Data.</p>
     </footer>
 
     <script src="script.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
 </body>
 </html>
