@@ -3,33 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Detailed Project Report | Vivek Sharma</title>
+    <title>Project Report | Vivek Sharma</title>
     <link rel="stylesheet" href="../style.css">
     <style>
-        .container { max-width: 1000px; margin: 100px auto; padding: 60px; background: var(--card-bg); border-radius: 40px; border: 1px solid var(--glass-border); }
+        .container { max-width: 1000px; margin: 100px auto; padding: 60px; background: var(--card-bg); border-radius: 40px; border: 1px solid var(--glass-border); text-align: center; }
         .back-btn { display: inline-flex; align-items: center; gap: 10px; color: var(--highlight); text-decoration: none; margin-bottom: 40px; }
-        .report-section { margin-bottom: 50px; }
-        .report-section h2 { font-size: 2rem; margin-bottom: 20px; color: var(--highlight); }
-        .report-section p { color: var(--text-secondary); line-height: 1.8; font-size: 1.1rem; }
+        .report-frame { width: 100%; height: 800px; border-radius: 24px; overflow: hidden; border: 1px solid var(--glass-border); background: var(--glass); display: flex; align-items: center; justify-content: center; position: relative; }
+        iframe { width: 100%; height: 100%; border: none; }
+        .report-placeholder { padding: 80px; color: var(--text-secondary); }
     </style>
 </head>
 <body class="dark-theme">
     <div class="container reveal active">
         <a href="../index.html" class="back-btn">← Back to Portfolio</a>
-        <h1 id="report-title">Detailed Analysis Report</h1>
-        <div class="report-content" id="report-content">
-            <div class="report-section">
-                <h2>Project Overview</h2>
-                <p id="report-overview">Detailed breakdown of analysis and performance impact metrics for Vivek Sharma's portfolio project.</p>
-            </div>
-            <div class="report-section">
-                <h2>Technical Execution</h2>
-                <p>Performed extensive data cleaning, modeling, and visualization using enterprise-grade tools. Validated data for 3rd-year B.Tech CSE (Data Science) project guidelines.</p>
-            </div>
-            <div class="report-section">
-                <h2>Key Findings</h2>
-                <p>Identified growth opportunities and optimized legacy datasets. Revenue impact projected based on historical data patterns.</p>
-            </div>
+        <h1 id="report-title">Project Report</h1>
+        <div id="viewer-container" class="report-frame">
+            <div id="loading" class="report-placeholder">Loading Data Report...<br><i>(Ensure your PDF is in reports/ folder)</i></div>
         </div>
     </div>
 
@@ -38,6 +27,26 @@
         const project = urlParams.get('p') || 'Project Summary';
         document.title = project + " | Vivek Sharma Report";
         document.getElementById('report-title').innerText = project;
+
+        // EXACT Filename Mapping for reports
+        const reportMap = {
+            'Mobile Sales Performance Dashboard': 'PowerBI Dashboard.pdf',
+            'Bank Loan Default Prediction': 'my predictive analysis report.pdf',
+            'EV Registration Market Trends': 'excel report EV analysis.pdf'
+        };
+
+        const container = document.getElementById('viewer-container');
+        const loading = document.getElementById('loading');
+        const fileName = reportMap[project];
+
+        if (fileName) {
+            const iframe = document.createElement('iframe');
+            iframe.src = fileName;
+            container.innerHTML = '';
+            container.appendChild(iframe);
+        } else {
+            loading.innerText = "No specific mapping for: " + project;
+        }
     </script>
 </body>
 </html>

@@ -8,16 +8,18 @@
     <style>
         .container { max-width: 900px; margin: 100px auto; padding: 40px; background: var(--card-bg); border-radius: 40px; border: 1px solid var(--glass-border); text-align: center; }
         .back-btn { display: inline-flex; align-items: center; gap: 10px; color: var(--highlight); text-decoration: none; margin-bottom: 40px; }
-        .cert-frame { width: 100%; height: 500px; background: rgba(255,255,255,0.02); margin-top: 30px; display: flex; align-items: center; justify-content: center; position: relative; border-radius: 20px; overflow: hidden; border: 1px dashed var(--glass-border); }
-        .cert-placeholder { color: var(--text-secondary); font-size: 1.2rem; }
+        .cert-frame { width: 100%; min-height: 600px; background: rgba(255,255,255,0.02); margin-top: 30px; display: flex; align-items: center; justify-content: center; position: relative; border-radius: 20px; overflow: hidden; border: 1px dashed var(--glass-border); }
+        iframe { width: 100%; height: 800px; border: none; border-radius: 12px; }
+        img { max-width: 100%; border-radius: 12px; }
+        .cert-placeholder { color: var(--text-secondary); font-size: 1.2rem; padding: 40px; }
     </style>
 </head>
 <body class="dark-theme">
     <div class="container reveal active">
         <a href="../../index.html" class="back-btn">← Back to Portfolio</a>
         <h1 id="cert-title">Certificate Detail</h1>
-        <div class="cert-frame">
-            <div class="cert-placeholder">Loading Certificate Image...<br><i>(Replace this with your certificate scan)</i></div>
+        <div id="viewer-container" class="cert-frame">
+            <div id="loading" class="cert-placeholder">Loading Certification Record...</div>
         </div>
     </div>
 
@@ -26,6 +28,42 @@
         const cert = urlParams.get('c') || 'Certification Record';
         document.title = cert + " | Vivek Sharma";
         document.getElementById('cert-title').innerText = cert;
+
+        // EXACT Filename Mapping for certificates
+        const certMap = {
+            'Hack Quest 24-hour CTF Challenge': 'hackathon certificate (2).jpeg',
+            'Byte Bash Coding Hackathon': 'hackathon certificate.jpeg',
+            'LPU Summer Training - Fundamentals of Data Structures': 'summer trening  certificate.pdf',
+            'AWS Certified Data Engineer': 'AWS Training & Certification.pdf',
+            'NPTEL Privacy and Security Registration': 'Privacy and Security in Online Social Media_page-0001.jpg',
+            'Coursera Machine Learning Specialization': 'Coursera ML with python certificate.pdf',
+            'Byte Bash Hackathon Winner': 'hackathon certificate.jpeg'
+        };
+
+        const container = document.getElementById('viewer-container');
+        const loading = document.getElementById('loading');
+        const fileName = certMap[cert];
+
+        if (fileName) {
+            if (fileName.toLowerCase().endsWith('.pdf')) {
+                const iframe = document.createElement('iframe');
+                iframe.src = fileName;
+                container.innerHTML = '';
+                container.appendChild(iframe);
+            } else {
+                const img = document.createElement('img');
+                img.src = fileName;
+                img.onload = () => {
+                    container.innerHTML = '';
+                    container.appendChild(img);
+                };
+                img.onerror = () => {
+                    loading.innerText = "Image not found: " + fileName + ". Check assets/certificates/ folder.";
+                };
+            }
+        } else {
+            loading.innerText = "Certificate mapping not found for: " + cert;
+        }
     </script>
 </body>
 </html>
