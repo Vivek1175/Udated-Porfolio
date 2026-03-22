@@ -20,14 +20,19 @@
         <div class="nav-content">
             <div class="logo">Vivek Sharma</div>
             <div class="nav-right">
-                <ul class="nav-links">
-                    <li><a href="#hero">Home</a></li>
-                    <li><a href="#stack">Tech Stack</a></li>
-                    <li><a href="#roadmap">Growth</a></li>
-                    <li><a href="#projects">Work</a></li>
-                    <li><a href="#proof">Proof</a></li>
-                </ul>
-                <button id="theme-toggle" class="theme-btn" aria-label="Toggle Theme">
+                <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#tech">Tech</a>
+                <a href="#hub">Learning Hub</a>
+                <a href="#projects">Work</a>
+                <a href="#proof">Proof</a>
+                </div>
+                <div class="nav-socials">
+                    <a href="https://github.com/Vivek1175" target="_blank" title="GitHub"><i data-lucide="github"></i></a>
+                    <a href="https://www.linkedin.com/in/vivek-sharma1175/" target="_blank" title="LinkedIn"><i data-lucide="linkedin"></i></a>
+                    <a href="mailto:sharmavivek110705@gmail.com" title="Email"><i data-lucide="mail"></i></a>
+                </div>
+                <button id="theme-toggle" class="theme-btn" title="Toggle Theme">
                     <i data-lucide="sun" class="sun-icon"></i>
                     <i data-lucide="moon" class="moon-icon"></i>
                 </button>
@@ -48,8 +53,13 @@
                     <h1 class="hero-heading">I decode data to<br><span class="highlight">drive decisions.</span></h1>
                     <p class="hero-subtext">3rd Year B.Tech CSE (Data Science) Student @ LPU | AWS Certified Data Engineer | Power BI Specialist</p>
                     <div class="hero-actions">
-                        <a href="./assets/vivek_sharma_cv.pdf" target="_blank" class="btn btn-primary glow-btn">Download CV <i data-lucide="download"></i></a>
-                        <a href="#projects" class="btn btn-secondary">View My Work</a>
+                        <a href="./assets/vivek_sharma_cv.pdf" class="btn primary" download>Download CV <i data-lucide="download"></i></a>
+                        <a href="#projects" class="btn secondary">View My Work</a>
+                        <div class="hero-social-links">
+                            <a href="https://github.com/Vivek1175" target="_blank" class="social-icon"><i data-lucide="github"></i></a>
+                            <a href="https://www.linkedin.com/in/vivek-sharma1175/" target="_blank" class="social-icon"><i data-lucide="linkedin"></i></a>
+                            <a href="mailto:sharmavivek110705@gmail.com" class="social-icon"><i data-lucide="mail"></i></a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -237,7 +247,7 @@
             <div class="awards-grid reveal">
                 <!-- Training Achievement -->
                 <a href="./assets/certificates/index.html?c=LPU+Summer+Training+-+Fundamentals+of+Data+Structures" class="award-card">
-                    <div class="award-thumb"><img src="./assets/certificates/Privacy%20and%20Security%20in%20Online%20Social%20Media_page-0001.jpg" alt="Summer Training"></div>
+                    <div class="award-thumb"><img src="./assets/certificates/summer_training_cert.jpg" alt="Summer Training"></div>
                     <div class="award-info">
                         <h4>LPU Summer Training</h4>
                         <p>Data Structures & Algorithms</p>
@@ -245,7 +255,7 @@
                 </a>
                 <!-- Hack Quest -->
                 <a href="./assets/certificates/index.html?c=Hack+Quest+24-hour+CTF+Challenge" class="award-card">
-                    <div class="award-thumb"><img src="./assets/certificates/hackathon%20certificate%20(2).jpeg" alt="Hack Quest"></div>
+                    <div class="award-thumb"><img src="./assets/certificates/hackquest_cert.jpg" alt="Hack Quest"></div>
                     <div class="award-info">
                         <h4>Hack Quest 24hr CTF</h4>
                         <p>upGrad Campus | LPU</p>
@@ -253,7 +263,7 @@
                 </a>
                 <!-- Byte Bash -->
                 <a href="./assets/certificates/index.html?c=Byte+Bash+Coding+Hackathon" class="award-card">
-                    <div class="award-thumb"><img src="./assets/certificates/hackathon%20certificate.jpeg" alt="Byte Bash"></div>
+                    <div class="award-thumb"><img src="./assets/certificates/bytebash_cert.jpg" alt="Byte Bash"></div>
                     <div class="award-info">
                         <h4>Byte Bash Hackathon</h4>
                         <p>LPU Student Welfare Wing</p>
@@ -264,26 +274,34 @@
             <div class="cert-carousel-container reveal">
                 <h3>Technical Certifications</h3>
                 <div class="cert-carousel">
-                    <!-- Carousel items (Actual User Images) -->
+                    <!-- Carousel items (Renamed User Images) -->
                     <a href="./assets/certificates/index.html?c=AWS+Certified+Data+Engineer" class="cert-item">
                         <div class="cert-thumb"><img src="./assets/certificates/aws_thumb.png" alt="AWS Cert"></div>
                         <div class="cert-label">AWS Certified Data Engineer</div>
                     </a>
                     <a href="./assets/certificates/index.html?c=NPTEL+Privacy+and+Security+Registration" class="cert-item">
-                        <div class="cert-thumb"><img src="./assets/certificates/Privacy%20and%20Security%20in%20Online%20Social%20Media_page-0001.jpg" alt="NPTEL Cert"></div>
+                        <div class="cert-thumb"><img src="./assets/certificates/nptel_cert.jpg" alt="NPTEL Cert"></div>
                         <div class="cert-label">NPTEL Privacy & Security</div>
                     </a>
-                    <a href="./assets/certificates/index.html?c=LPU+Summer+Training+-+Fundamentals+of+Data+Structures" class="cert-item">
-                        <div class="cert-thumb"><img src="./assets/certificates/Privacy%20and%20Security%20in%20Online%20Social%20Media_page-0001.jpg" alt="Summer Training"></div>
-                        <div class="cert-label">LPU Summer Training</div>
+                    <a href="./assets/certificates/index.html?c=Coursera+Machine+Learning+Specialization" class="cert-item">
+                        <div class="cert-thumb"><img src="./assets/certificates/ml_thumb.png" alt="Coursera ML"></div>
+                        <div class="cert-label">Coursera ML Specialization</div>
                     </a>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer class="footer">
-        <p>© 2026 Vivek Sharma | Decoded with <i data-lucide="heart" class="heart-icon"></i> and Data.</p>
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2026 Vivek Sharma. Developed with passion & precision.</p>
+            <div class="footer-links">
+                <a href="https://github.com/Vivek1175" target="_blank">GitHub</a>
+                <a href="https://www.linkedin.com/in/vivek-sharma1175/" target="_blank">LinkedIn</a>
+                <a href="mailto:sharmavivek110705@gmail.com">Contact Email</a>
+            </div>
+        </div>
     </footer>
 
     <script src="script.js"></script>

@@ -77,7 +77,7 @@ body {
 .nav-right {
     display: flex;
     align-items: center;
-    gap: 32px;
+    gap: 24px;
 }
 
 .logo {
@@ -118,7 +118,7 @@ body {
 .nav-links {
     display: flex;
     list-style: none;
-    gap: 32px;
+    gap: 24px;
 }
 
 .nav-links a {
@@ -133,6 +133,30 @@ body {
 
 .nav-links a:hover {
     color: var(--text-primary);
+}
+
+.nav-socials {
+    display: flex;
+    gap: 16px;
+    padding-left: 24px;
+    border-left: 1px solid var(--glass-border);
+}
+
+.nav-socials a {
+    color: var(--text-secondary);
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+}
+
+.nav-socials a:hover {
+    color: var(--highlight);
+    transform: translateY(-2px);
+}
+
+.nav-socials i {
+    width: 20px;
+    height: 20px;
 }
 
 /* Main content */
@@ -228,7 +252,36 @@ main {
 
 .hero-actions {
     display: flex;
-    gap: 16px;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.hero-social-links {
+    display: flex;
+    gap: 12px;
+    margin-left: 10px;
+}
+
+.social-icon {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--glass);
+    border: 1px solid var(--glass-border);
+    border-radius: 50%;
+    color: var(--text-primary);
+    transition: var(--transition);
+}
+
+.social-icon:hover {
+    background: var(--highlight);
+    color: #fff;
+    border-color: var(--highlight);
+    transform: translateY(-4px) rotate(8deg);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
 }
 
 /* Buttons */
